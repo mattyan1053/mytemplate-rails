@@ -84,3 +84,14 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start server via Thruster by default, this can be overwritten at runtime
 EXPOSE 80
 CMD ["./bin/thrust", "./bin/rails", "server"]
+
+# The image for development
+FROM build AS development
+
+# Install packages needed for development
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y vim mariadb-client watchman && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# Enable installing gems
+RUN bundle config set frozen false

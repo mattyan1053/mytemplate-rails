@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: app
-      image: mytemplate-rails
+      image: mytemplate-rails-dev
       command: ["irb"]
       ports:
         - containerPort: 3000
