@@ -2,18 +2,18 @@
 <div class="container mx-auto py-8 bg-gray-50">
   <div class="border border-gray-200 rounded-md p-4 mb-6">
     <h1 class="text-3xl font-bold mb-4 text-blue-700">mytemplate-rails</h1>
-    <p class="text-gray-700 mb-2"><%= t('template_description', locale: I18n.locale) %></p>
+    <p class="text-gray-700 mb-2"><%= t('home.template_description') %></p>
   </div>
 
   <div class="border border-gray-200 rounded-md p-4 mb-6">
-    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('verified_environments', locale: I18n.locale) %></h2>
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('home.verified_environments') %></h2>
     <ul class="list-disc list-inside mb-4">
       <li class="text-gray-700">Podman: 5.2.2</li>
     </ul>
   </div>
 
   <div class="border border-gray-200 rounded-md p-4 mb-6">
-    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('versions', locale: I18n.locale) %></h2>
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('home.versions') %></h2>
     <ul class="list-disc list-inside mb-4">
       <li class="text-gray-700">Ruby: 3.4.2</li>
       <li class="text-gray-700">Node.js: 18.19.0
@@ -25,14 +25,14 @@
   </div>
 
   <div class="border border-gray-200 rounded-md p-4 mb-6">
-    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('tech_stack', locale: I18n.locale) %></h2>
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('home.tech_stack') %></h2>
     <ul class="list-disc list-inside mb-4">
-      <li class="text-gray-700"><%= t('web_application', locale: I18n.locale) %>
+      <li class="text-gray-700"><%= t('home.web_application') %>
         <ul class="list-disc list-inside ml-4">
           <li class="text-gray-700">Ruby on Rails 8</li>
         </ul>
       </li>
-      <li class="text-gray-700"><%= t('frontend', locale: I18n.locale) %>
+      <li class="text-gray-700"><%= t('home.frontend') %>
         <ul class="list-disc list-inside ml-4">
           <li class="text-gray-700">TypeScript</li>
           <li class="text-gray-700">Turbo</li>
@@ -40,13 +40,13 @@
           <li class="text-gray-700">Tailwind CSS</li>
         </ul>
       </li>
-      <li class="text-gray-700"><%= t('test', locale: I18n.locale) %>
+      <li class="text-gray-700"><%= t('home.test') %>
         <ul class="list-disc list-inside ml-4">
           <li class="text-gray-700">Ruby: RSpec</li>
           <li class="text-gray-700">TypeScript: Jest</li>
         </ul>
       </li>
-      <li class="text-gray-700"><%= t('syntax_check', locale: I18n.locale) %>
+      <li class="text-gray-700"><%= t('home.syntax_check') %>
         <ul class="list-disc list-inside ml-4">
           <li class="text-gray-700">Ruby: Rubocop</li>
           <li class="text-gray-700">TypeScript: ESLint + Prettier</li>
@@ -56,7 +56,7 @@
   </div>
 
   <div class="border border-gray-200 rounded-md p-4 mb-6">
-    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('production_image_creation_procedure', locale: I18n.locale) %></h2>
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('home.production_image_creation_procedure') %></h2>
     <pre class="bg-gray-200 p-4 rounded-md overflow-x-auto"><code class="font-mono text-sm text-gray-800">
 # Build image
 $ bin/build-image
@@ -64,7 +64,7 @@ $ bin/build-image
   </div>
 
   <div class="border border-gray-200 rounded-md p-4 mb-6">
-    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('development_environment_construction_procedure', locale: I18n.locale) %></h2>
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('home.development_environment_construction_procedure') %></h2>
     <pre class="bg-gray-200 p-4 rounded-md overflow-x-auto"><code class="font-mono text-sm text-gray-800">
 # Build development image
 $ bin/build-image-dev
@@ -84,7 +84,7 @@ $ podman exec -it mytemplate-rails-app bin/dev
   </div>
 
   <div class="border border-gray-200 rounded-md p-4 mb-6">
-    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('command_collection', locale: I18n.locale) %></h2>
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('home.command_collection') %></h2>
     <pre class="bg-gray-200 p-4 rounded-md overflow-x-auto"><code class="font-mono text-sm text-gray-800">
 # Lint for Ruby
 $ podman exec mytemplate-rails-app bin/rubocop [-A] <files>

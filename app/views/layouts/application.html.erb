@@ -17,16 +17,18 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <% unless Rails.env.test? %>
+      <%# Includes all stylesheet files in app/assets/stylesheets %>
+      <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+      <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <% end %>
   </head>
 
   <body>
     <%= render "shared/navbar" %>
     <div class="flex h-screen overflow-hidden">
       <aside class="bg-gray-200 w-64 flex-shrink-0">
-        <%= render "shared/sidebar", items: @items %>
+        <%= render "shared/sidebar", sidebar_items: @sidebar_items %>
       </aside>
       <div class="flex-1 overflow-y-auto">
         <main class="p-4">

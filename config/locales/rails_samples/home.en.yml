@@ -1,0 +1,4 @@
+en:
+  rails_samples:
+    home:
+      rails_sample_description: "Here are samples of Rails features."

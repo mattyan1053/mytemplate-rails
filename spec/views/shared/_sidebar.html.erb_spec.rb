@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'shared/_sidebar.html.erb', type: :view do
-  subject(:rendered) { render partial: 'shared/sidebar', locals: { items: items } }
-  let(:items) do
+  subject(:rendered) { render partial: 'shared/sidebar', locals: { sidebar_items: sidebar_items } }
+  let(:sidebar_items) do
     [
       { name: 'Home', url: '/' },
       { name: 'About', url: '#about' }
@@ -14,7 +14,7 @@ RSpec.describe 'shared/_sidebar.html.erb', type: :view do
   end
 
   it 'itemsが正しく表示されること' do
-    items.each do |item|
+    sidebar_items.each do |item|
       expect(rendered).to have_link(item[:name], href: item[:url])
     end
   end

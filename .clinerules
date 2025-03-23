@@ -54,3 +54,4 @@
 - replace_in_file が失敗する場合は、write_to_file を使用する
 - i18n の scope を指定しない
 - config/application.rb で locale ファイルのパスを指定する
+- rails配下とそれ以外のページで異なるサイドバーメニューを表示する場合は、それぞれのApplicationControllerで`set_sidebar_items`メソッドを定義する
