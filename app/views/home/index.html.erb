@@ -1,1 +1,105 @@
-<h1><%= t('home.hello') %></h1>
+<% content_for :title, "Home" %>
+<div class="container mx-auto py-8 bg-gray-50">
+  <div class="border border-gray-200 rounded-md p-4 mb-6">
+    <h1 class="text-3xl font-bold mb-4 text-blue-700">mytemplate-rails</h1>
+    <p class="text-gray-700 mb-2"><%= t('template_description', locale: I18n.locale) %></p>
+  </div>
+
+  <div class="border border-gray-200 rounded-md p-4 mb-6">
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('verified_environments', locale: I18n.locale) %></h2>
+    <ul class="list-disc list-inside mb-4">
+      <li class="text-gray-700">Podman: 5.2.2</li>
+    </ul>
+  </div>
+
+  <div class="border border-gray-200 rounded-md p-4 mb-6">
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('versions', locale: I18n.locale) %></h2>
+    <ul class="list-disc list-inside mb-4">
+      <li class="text-gray-700">Ruby: 3.4.2</li>
+      <li class="text-gray-700">Node.js: 18.19.0
+        <ul class="list-disc list-inside">
+          <li class="text-gray-700">Yarn: 1.22.22</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="border border-gray-200 rounded-md p-4 mb-6">
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('tech_stack', locale: I18n.locale) %></h2>
+    <ul class="list-disc list-inside mb-4">
+      <li class="text-gray-700"><%= t('web_application', locale: I18n.locale) %>
+        <ul class="list-disc list-inside ml-4">
+          <li class="text-gray-700">Ruby on Rails 8</li>
+        </ul>
+      </li>
+      <li class="text-gray-700"><%= t('frontend', locale: I18n.locale) %>
+        <ul class="list-disc list-inside ml-4">
+          <li class="text-gray-700">TypeScript</li>
+          <li class="text-gray-700">Turbo</li>
+          <li class="text-gray-700">Stimulus</li>
+          <li class="text-gray-700">Tailwind CSS</li>
+        </ul>
+      </li>
+      <li class="text-gray-700"><%= t('test', locale: I18n.locale) %>
+        <ul class="list-disc list-inside ml-4">
+          <li class="text-gray-700">Ruby: RSpec</li>
+          <li class="text-gray-700">TypeScript: Jest</li>
+        </ul>
+      </li>
+      <li class="text-gray-700"><%= t('syntax_check', locale: I18n.locale) %>
+        <ul class="list-disc list-inside ml-4">
+          <li class="text-gray-700">Ruby: Rubocop</li>
+          <li class="text-gray-700">TypeScript: ESLint + Prettier</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="border border-gray-200 rounded-md p-4 mb-6">
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('production_image_creation_procedure', locale: I18n.locale) %></h2>
+    <pre class="bg-gray-200 p-4 rounded-md overflow-x-auto"><code class="font-mono text-sm text-gray-800">
+# Build image
+$ bin/build-image
+</code></pre>
+  </div>
+
+  <div class="border border-gray-200 rounded-md p-4 mb-6">
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('development_environment_construction_procedure', locale: I18n.locale) %></h2>
+    <pre class="bg-gray-200 p-4 rounded-md overflow-x-auto"><code class="font-mono text-sm text-gray-800">
+# Build development image
+$ bin/build-image-dev
+
+# Start Pod
+$ podman play kube manifest.dev.yml
+
+# DB initialization
+$ podman exec mytemplate-rails-app bin/rails db:create db:migrate db:seed
+
+# Install node modules
+$ podman exec mytemplate-rails-app yarn install
+
+# Start development!
+$ podman exec -it mytemplate-rails-app bin/dev
+</code></pre>
+  </div>
+
+  <div class="border border-gray-200 rounded-md p-4 mb-6">
+    <h2 class="text-2xl font-semibold mt-6 mb-2 text-blue-700"><%= t('command_collection', locale: I18n.locale) %></h2>
+    <pre class="bg-gray-200 p-4 rounded-md overflow-x-auto"><code class="font-mono text-sm text-gray-800">
+# Lint for Ruby
+$ podman exec mytemplate-rails-app bin/rubocop [-A] <files>
+
+# Test for Ruby
+$ podman exec mytemplate-rails-app bin/rspec <files>
+
+# Lint for TypeScript
+$ podman exec mytemplate-rails-app yarn eslint <files>
+
+# Autocomplete Lin for TypeScript
+$ podman exec mytemplate-rails-app yarn prettier --write <files>
+
+# Test for TypeScript
+$ podman exec mytemplate-rails-app yarn jest <files>
+</code></pre>
+  </div>
+</div>

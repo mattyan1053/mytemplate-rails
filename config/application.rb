@@ -28,6 +28,8 @@ module App
     config.i18n.default_locale = :ja
     config.i18n.available_locales = %i[ja en]
 
+    config.i18n.load_path += Dir[Rails.root.join("config", "locales", "*.yml")]
+
     config.credentials.config_files = [
       Rails.root.join("config/credentials.yml.enc"),
       Rails.root.join("config/credentials/#{Rails.env}.yml.enc")

@@ -1,9 +1,7 @@
 class HomeController < ApplicationController
   def index
     @items = [
-      { name: "Home", url: "/" },
-      { name: "About", url: "/about" },
-      { name: "Contact", url: "/contact" }
+      { name: "Home", url: "/" }
     ]
   end
 end

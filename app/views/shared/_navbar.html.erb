@@ -15,6 +15,10 @@
           </div>
         </div>
       </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <%= link_to "日本語", url_for(locale: :ja), class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" %>
+        <%= link_to "English", url_for(locale: :en), class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" %>
+      </div>
     </div>
   </div>
 </nav>

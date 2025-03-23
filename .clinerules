@@ -52,3 +52,5 @@
 - sidebar に渡す items は、コントローラーで設定する必要がある
 - bin/rubocop で RuboCop を実行できる
 - replace_in_file が失敗する場合は、write_to_file を使用する
+- i18n の scope を指定しない
+- config/application.rb で locale ファイルのパスを指定する
