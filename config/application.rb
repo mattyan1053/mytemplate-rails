@@ -25,6 +25,9 @@ module App
     config.active_record.default_timezone = :local
     # config.eager_load_paths << Rails.root.join("extras")
 
+    config.i18n.default_locale = :ja
+    config.i18n.available_locales = %i[ja en]
+
     config.credentials.config_files = [
       Rails.root.join("config/credentials.yml.enc"),
       Rails.root.join("config/credentials/#{Rails.env}.yml.enc")
