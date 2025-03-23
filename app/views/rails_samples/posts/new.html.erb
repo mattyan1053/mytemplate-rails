@@ -1,2 +1,7 @@
-<h1>RailsSamples::Posts#new</h1>
-<p>Find me in app/views/rails/posts/new.html.erb</p>
+<div class="container mx-auto">
+  <h1 class="text-2xl font-bold mb-4">New Post</h1>
+  <%= form_with model: @post, url: rails_samples_posts_path, class: 'mb-4' do |form| %>
+    <%= render 'form', form: form %>
+  <% end %>
+  <%= link_to 'Back', rails_samples_posts_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block' %>
+</div>

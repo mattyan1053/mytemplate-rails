@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "RailsSamples::Posts", type: :request do
+  let(:new_post) { create(:post) }
+
   describe "GET /index" do
     it "returns http success" do
-      get "/rails_samples/posts/index"
+      get "/rails_samples/posts"
       expect(response).to have_http_status(:success)
     end
   end
@@ -15,38 +17,39 @@ RSpec.describe "RailsSamples::Posts", type: :request do
     end
   end
 
-  describe "GET /create" do
+  describe "POST /create" do
     it "returns http success" do
-      get "/rails_samples/posts/create"
-      expect(response).to have_http_status(:success)
+      post "/rails_samples/posts", params: { post: attributes_for(:post) }
+      expect(response).to have_http_status(302)
     end
   end
 
   describe "GET /show" do
     it "returns http success" do
-      get "/rails_samples/posts/show"
+      get "/rails_samples/posts/#{new_post.id}"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /edit" do
     it "returns http success" do
-      get "/rails_samples/posts/edit"
+      get "/rails_samples/posts/#{new_post.id}/edit"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /update" do
+  describe "PATCH /update" do
+    let(:updated_post) { build(:post, title: "test2", content: "content2") }
     it "returns http success" do
-      get "/rails_samples/posts/update"
-      expect(response).to have_http_status(:success)
+      patch "/rails_samples/posts/#{new_post.id}", params: { post: updated_post.attributes }
+      expect(response).to have_http_status(302)
     end
   end
 
-  describe "GET /destroy" do
+  describe "DELETE /destroy" do
     it "returns http success" do
-      get "/rails_samples/posts/destroy"
-      expect(response).to have_http_status(:success)
+      delete "/rails_samples/posts/#{new_post.id}"
+      expect(response).to have_http_status(302)
     end
   end
 end

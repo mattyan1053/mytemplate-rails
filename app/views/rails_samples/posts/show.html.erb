@@ -1,2 +1,9 @@
-<h1>RailsSamples::Posts#show</h1>
-<p>Find me in app/views/rails/posts/show.html.erb</p>
+<div class="container mx-auto">
+  <h1 class="text-2xl font-bold mb-4"><%= @post.title %></h1>
+  <p class="mb-4"><%= @post.content %></p>
+  <p class="text-gray-600">作成日時: <%= @post.created_at %></p>
+  <p class="text-gray-600">更新日時: <%= @post.updated_at %></p>
+  <%= link_to 'Edit', edit_rails_samples_post_path(@post), class: 'bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded inline-block' %>
+  <%= link_to 'Destroy', rails_samples_post_path(@post), data: { turbo_method: :delete, turbo_confirm: t("confirm") }, class: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block' %>
+  <%= link_to 'Back', rails_samples_posts_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block' %>
+</div>
