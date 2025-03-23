@@ -1,0 +1,7 @@
+# Ignore artifacts:
+node_modules/
+
+*.min.js
+
+app/assets/builds/
+
