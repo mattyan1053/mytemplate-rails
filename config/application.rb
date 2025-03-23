@@ -25,6 +25,11 @@ module App
     config.active_record.default_timezone = :local
     # config.eager_load_paths << Rails.root.join("extras")
 
+    config.credentials.config_files = [
+      Rails.root.join("config/credentials.yml.enc"),
+      Rails.root.join("config/credentials/#{Rails.env}.yml.enc")
+    ]
+
     config.generators do |g|
       g.test_framework :rspec
     end
