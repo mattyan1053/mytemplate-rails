@@ -24,6 +24,15 @@
 
   <body>
     <%= render "shared/navbar" %>
-    <%= yield %>
+    <div class="flex h-screen overflow-hidden">
+      <aside class="bg-gray-200 w-64 flex-shrink-0">
+        <%= render "shared/sidebar", items: @items %>
+      </aside>
+      <div class="flex-1 overflow-y-auto">
+        <main class="p-4">
+          <%= yield %>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

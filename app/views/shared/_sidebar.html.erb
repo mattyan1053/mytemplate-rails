@@ -1,0 +1,11 @@
+<div class="h-full px-3 py-4 overflow-y-auto bg-gray-200">
+  <ul class="space-y-2">
+    <% if items.present? %>
+      <% items.each do |item| %>
+        <li>
+          <%= link_to item[:name], item[:url], class: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700" %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
