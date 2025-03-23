@@ -33,9 +33,20 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install node modules
+        run: yarn install
 
       - name: Lint code for consistent style
         run: bin/rubocop -f github
+
+      - name: Lint code for typescript
+        run: yarn eslint
 
   rspec:
     runs-on: ubuntu-latest
