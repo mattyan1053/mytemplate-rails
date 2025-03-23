@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
   namespace :turbo_samples do
     root "home#index"
+    resources :options, only: [ :index ] do
+      member do
+        post :vote
+      end
+    end
   end
 
   namespace :stimulus_samples do

@@ -1,0 +1,6 @@
+ja:
+  turbo_samples:
+    options:
+      live_voting: "ライブ投票"
+      live_voting_description: "Turbo Stream を利用したリアルタイムでの投票アプリです。"
+      vote: "投票"

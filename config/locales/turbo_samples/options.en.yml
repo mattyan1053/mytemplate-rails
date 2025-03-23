@@ -1,0 +1,6 @@
+en:
+  turbo_samples:
+    options:
+      live_voting: "Live voting"
+      live_voting_description: "Real-time voting app using Turbo Stream."
+      vote: "Vote"

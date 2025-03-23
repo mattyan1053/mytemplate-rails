@@ -1,0 +1,6 @@
+<!-- render @option does not work: https://github.com/hotwired/turbo-rails/issues/65#issuecomment-1231957242 -->
+<turbo-stream action="replace" target="option_<%= @option.id %>">
+  <template>
+    <%= render partial: 'turbo_samples/options/option', formats: :html, locals: { option: @option } %>
+  </template>
+</turbo-stream>
