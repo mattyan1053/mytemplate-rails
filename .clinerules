@@ -55,3 +55,7 @@
 - i18n の scope を指定しない
 - config/application.rb で locale ファイルのパスを指定する
 - rails配下とそれ以外のページで異なるサイドバーメニューを表示する場合は、それぞれのApplicationControllerで`set_sidebar_items`メソッドを定義する
+- コミットメッセージには絵文字をつける
+- 関連Issueには `Resolves #〇〇` のようにResolvesをつける
+- PRテンプレートとIssueテンプレートは、`.github`ディレクトリに配置する
+- PRテンプレートとIssueテンプレートの項目名は、日本語/英語で記述する
