@@ -15,8 +15,9 @@ Rails 8 + Podman で開発するテンプレート
     - Ruby on Rails 8
 - フロントエンド
     - TypeScript
-    - Turbo
-    - Stimulus
+    - Hotwired
+        - Turbo
+        - Stimulus
     - Tailwind CSS
 - テスト
     - Ruby: RSpec
