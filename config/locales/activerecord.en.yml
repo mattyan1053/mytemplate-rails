@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      cat: "Cat"
+    attributes:
+      cat:
+        name: "Name"
+        age: "Age"

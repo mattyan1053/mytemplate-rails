@@ -1,0 +1,2 @@
+module HotwiredSamples::CatsHelper
+end

@@ -1,2 +1,21 @@
 ja:
   confirm: "本当によろしいですか？"
+  helpers:
+    links:
+      new: "新規作成"
+      edit: "編集"
+      show: "詳細"
+      destroy: "削除"
+      back: "戻る"
+      confirm: "本当によろしいですか？"
+    submit:
+      create: "作成"
+      update: "更新"
+      new: "新規"
+      edit: "編集"
+  errors:
+    messages:
+      not_saved: "%{count}件のエラーが発生しました。%{resource}を保存できませんでした。"
+      blank: "を入力してください"
+      not_a_number: "は数値で入力してください"
+      greater_than_or_equal_to: "は%{count}以上の値にしてください"

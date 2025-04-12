@@ -1,0 +1,40 @@
+<div class="container mx-auto">
+  <h1 class="text-2xl font-bold mb-4"><%= t('activerecord.models.cat', count: @cats.count) %></h1>
+
+  <br>
+  <%= link_to t('helpers.links.new'), new_hotwired_samples_cat_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+
+  <br>
+  <br>
+
+  <%= turbo_frame_tag "cats-list" do %>
+    <div class="overflow-x-auto">
+      <table class="table-fixed">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="w-[300px] px-4 py-2"><%= t('activerecord.attributes.cat.name') %></th>
+            <th class="w-[100px] px-4 py-2"><%= t('activerecord.attributes.cat.age') %></th>
+            <th class="w-[50px] px-4 py-2" colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @cats.each do |cat| %>
+            <tr>
+              <td class="border px-4 py-2 break-all"><%= cat.name %></td>
+              <td class="border px-4 py-2"><%= cat.age %></td>
+              <td class="border px-4 py-2"><%= link_to t('helpers.links.edit'), edit_hotwired_samples_cat_path(cat), class: "text-green-500 hover:text-green-700" %></td>
+              <td class="border px-4 py-2"><%= link_to t('helpers.links.destroy'), hotwired_samples_cat_path(cat), data: { turbo_method: :delete, turbo_confirm: t('helpers.links.confirm') }, class: "text-red-500 hover:text-red-700" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+
+    <div class="mt-4 w-full overflow-x-auto">
+      <%== pagy_nav(@pagy) if @pagy.present? %>
+    </div>
+  <% end %>
+</div>

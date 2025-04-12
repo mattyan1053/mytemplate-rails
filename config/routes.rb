@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   namespace :hotwired_samples do
+    resources :cats
     root "home#index"
     resources :options, only: [ :index ] do
       member do

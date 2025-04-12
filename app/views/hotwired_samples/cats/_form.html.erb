@@ -1,0 +1,27 @@
+<%= form_with(model: [:hotwired_samples, @cat], local: true, class: "w-full max-w-lg") do |form| %>
+  <% if @cat.errors.any? %>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+      <strong class="font-bold"><%= t('errors.messages.not_saved', count: @cat.errors.count, resource: t('activerecord.models.cat')) %></strong>
+      <span class="block sm:inline"></span>
+      <ul>
+        <% @cat.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-4">
+    <%= form.label :name, t('activerecord.attributes.cat.name'), class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_field :name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="mb-6">
+    <%= form.label :age, t('activerecord.attributes.cat.age'), class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.number_field :age, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <%= form.submit t('helpers.submit.create', model: t('activerecord.models.cat')), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </div>
+<% end %>
