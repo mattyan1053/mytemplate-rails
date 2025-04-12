@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "turbo_samples/options/vote.turbo_stream", type: :view do
+RSpec.describe "hotwired_samples/options/vote.turbo_stream", type: :view do
   let(:option) { create(:option, name: "Option 1", votes: 1) }
 
   it "renders the option" do

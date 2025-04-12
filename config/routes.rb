@@ -10,17 +10,13 @@ Rails.application.routes.draw do
     root "home#index"
   end
 
-  namespace :turbo_samples do
+  namespace :hotwired_samples do
     root "home#index"
     resources :options, only: [ :index ] do
       member do
         post :vote
       end
     end
-  end
-
-  namespace :stimulus_samples do
-    root "home#index"
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

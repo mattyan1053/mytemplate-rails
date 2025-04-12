@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "turbo_samples/options/index", type: :view do
+RSpec.describe "hotwired_samples/options/index", type: :view do
   let(:options) do
     [
       create(:option, name: "Option 1", votes: 1),
