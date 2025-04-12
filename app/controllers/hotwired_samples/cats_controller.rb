@@ -7,10 +7,6 @@ class HotwiredSamples::CatsController < HotwiredSamples::ApplicationController
     @pagy, @cats = pagy(Cat.all)
   end
 
-  # GET /hotwired_samples/cats/1
-  def show
-  end
-
   # GET /hotwired_samples/cats/new
   def new
     @cat = Cat.new
@@ -25,7 +21,7 @@ class HotwiredSamples::CatsController < HotwiredSamples::ApplicationController
     @cat = Cat.new(cat_params)
 
     if @cat.save
-      redirect_to hotwired_samples_cat_path(@cat), notice: "Cat was successfully created."
+      redirect_to hotwired_samples_cats_path, notice: "Cat was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +30,7 @@ class HotwiredSamples::CatsController < HotwiredSamples::ApplicationController
   # PATCH/PUT /hotwired_samples/cats/1
   def update
     if @cat.update(cat_params)
-      redirect_to hotwired_samples_cat_path(@cat), notice: "Cat was successfully updated."
+      redirect_to hotwired_samples_cats_path, notice: "Cat was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
