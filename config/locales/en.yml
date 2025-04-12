@@ -1,2 +1,21 @@
 en:
   confirm: "Are you sure?"
+  helpers:
+    links:
+      new: "New"
+      edit: "Edit"
+      show: "Show"
+      destroy: "Destroy"
+      back: "Back"
+      confirm: "Are you sure?"
+    submit:
+      create: "Create"
+      update: "Update"
+      new: "New"
+      edit: "Edit"
+  errors:
+    messages:
+      not_saved: "There were %{count} errors prohibiting this %{resource} from being saved:"
+      blank: "can't be blank"
+      not_a_number: "is not a number"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"

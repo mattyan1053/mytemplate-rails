@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+if Rails.env.development?
+  100.times do
+    Cat.create!(name: Faker::Creature::Cat.name, age: rand(1..15))
+  end
+end

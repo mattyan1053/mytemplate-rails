@@ -7,6 +7,7 @@ class HotwiredSamples::ApplicationController < ApplicationController
 
   def set_sidebar_items
     @sidebar_items = [
+      { name: "SPA風CRUD", url: hotwired_samples_cats_path },
       { name: "ライブ投票", url: hotwired_samples_options_path }
     ]
   end
