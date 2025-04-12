@@ -1,6 +1,6 @@
 class HotwiredSamples::CatsController < HotwiredSamples::ApplicationController
   include Pagy::Backend
-  before_action :set_cat, only: %i[ show edit update destroy ]
+  before_action :set_cat, only: %i[ edit update destroy ]
 
   # GET /hotwired_samples/cats
   def index

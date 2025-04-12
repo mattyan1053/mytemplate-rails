@@ -7,13 +7,14 @@ RSpec.describe "HotwiredSamples::Cats", type: :request do
       get hotwired_samples_cats_path
       expect(response).to be_successful
     end
-  end
 
-  describe "GET /show" do
-    it "renders a successful response" do
-      cat = Cat.create!(name: "Tama", age: 3)
-      get hotwired_samples_cat_path(cat)
-      expect(response).to be_successful
+    it "displays the list of cats" do
+      11.times do |i|
+        Cat.create!(name: "Cat #{i}", age: i)
+      end
+      get hotwired_samples_cats_path
+      expect(response.body).to include("Cat 0")
+      expect(response.body).not_to include("Cat 10")
     end
   end
 
@@ -40,9 +41,9 @@ RSpec.describe "HotwiredSamples::Cats", type: :request do
         }.to change(Cat, :count).by(1)
       end
 
-      it "redirects to the created cat" do
+      it "redirects to the cats" do
         post hotwired_samples_cats_path, params: { cat: { name: "Tama", age: 3 } }
-        expect(response).to redirect_to(hotwired_samples_cat_path(Cat.last))
+        expect(response).to redirect_to(hotwired_samples_cats_path)
       end
     end
 
@@ -70,10 +71,10 @@ RSpec.describe "HotwiredSamples::Cats", type: :request do
         expect(cat.age).to eq(5)
       end
 
-      it "redirects to the cat" do
+      it "redirects to the cats" do
         cat = Cat.create!(name: "Tama", age: 3)
         patch hotwired_samples_cat_path(cat), params: { cat: { name: "Pochi", age: 5 } }
-        expect(response).to redirect_to(hotwired_samples_cat_path(cat))
+        expect(response).to redirect_to(hotwired_samples_cats_path)
       end
     end
 
