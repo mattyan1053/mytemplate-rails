@@ -6,6 +6,8 @@ class TailwindSamples::ApplicationController < ApplicationController
   end
 
   def set_sidebar_items
-    @sidebar_items = []
+    @sidebar_items = [
+      { name: "V4 Demo", url: tailwind_samples_v4_demo_path }
+    ]
   end
 end

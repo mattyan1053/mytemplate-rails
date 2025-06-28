@@ -69,3 +69,12 @@ $ podman exec mytemplate-rails-app yarn prettier --write <files>
 $ podman exec mytemplate-rails-app yarn jest <files>
 
 ```
+
+## Gemini CLI 利用手順
+```sh
+# Set Google AI Studio API Key as an environment variable
+$ export GEMINI_API_KEY="YOUR_API_KEY" # Alternatively, you can put .env in.
+
+# Start gemini CLI
+$ yarn exec gemini
+```

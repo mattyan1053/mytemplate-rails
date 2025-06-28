@@ -3,6 +3,7 @@
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.23.0",
+    "@google/gemini-cli": "^0.1.7",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.11",
     "@types/tailwindcss": "^3.1.0",
@@ -19,7 +20,7 @@
   },
   "scripts": {
     "build": "esbuild app/typescript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
-    "build:css": "npx @tailwindcss/cli -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+    "build:css": "tailwindcss --config ./tailwind.config.js -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",

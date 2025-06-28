@@ -1,4 +1,12 @@
 en:
   tailwind_samples:
     home:
-      tailwind_css_sample_description: This is a sample page for Tailwind CSS.
+      v4_demo:
+        title: "Tailwind CSS v4 Demo"
+        css_variables_title: "CSS Variables without the complexity"
+        blue_button: "Blue Button"
+        red_button: "Red Button"
+        variant_syntax_title: "New `variant` syntax"
+        variant_syntax_description: "Hover over this box to see the text color change."
+        theme_function_title: "New `theme` function"
+        theme_function_description: "This box's background color is set using the `theme()` function."

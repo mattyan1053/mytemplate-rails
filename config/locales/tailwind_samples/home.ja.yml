@@ -1,4 +1,12 @@
 ja:
   tailwind_samples:
     home:
-      tailwind_css_sample_description: これは Tailwind CSS のサンプルページです。
+      v4_demo:
+        title: "Tailwind CSS v4 デモ"
+        css_variables_title: "複雑さのないCSS変数"
+        blue_button: "青いボタン"
+        red_button: "赤いボタン"
+        variant_syntax_title: "新しい `variant` 構文"
+        variant_syntax_description: "このボックスにカーソルを合わせると、テキストの色が変わります。"
+        theme_function_title: "新しい `theme` 関数"
+        theme_function_description: "このボックスの背景色は `theme()` 関数を使用して設定されています。"
