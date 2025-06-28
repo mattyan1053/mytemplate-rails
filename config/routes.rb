@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :tailwind_samples do
     root "home#index"
+    get :v4_demo, to: "home#v4_demo"
   end
 
   namespace :hotwired_samples do
