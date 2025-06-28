@@ -32,3 +32,4 @@
 ## 注意事項
 
 - `theme()` のようなTailwind CSS v4の関数は、HTMLのインラインスタイルや `<style>` タグ内では直接使用せず、`application.tailwind.css` 内で `@apply` と共に使用するか、ユーティリティクラスに置き換えてください。
+- Node.jsのバージョンは `Dockerfile` に記載されているバージョンを正とします。関連ファイル（`.node-version`, `.github/workflows/ci.yml` など）のバージョンを更新する際は、`Dockerfile` の記述に合わせてください。
