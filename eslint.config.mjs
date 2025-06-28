@@ -9,7 +9,7 @@ export default defineConfig([
   { files: ["**/*.js"], languageOptions: { sourceType: "commonjs" } },
   { files: ["**/*.{js,mjs,cjs,ts}"], languageOptions: { globals: globals.browser } },
   { files: ["**/*.{js,mjs,cjs,ts}"], plugins: { js }, extends: ["js/recommended"] },
-  globalIgnores(["**/builds/**/*", "**/vendor/**/*", "**/node_modules/**/*", "**/jest.config.js"], "Ignore build directory"),
+  globalIgnores(["**/builds/**/*", "**/vendor/**/*", "**/node_modules/**/*", "**/jest.config.js", "tailwind.config.js", "postcss.config.js"], "Ignore build directory"),
   tseslint.configs.recommended,
   eslintConfigPrettier,
 ]);

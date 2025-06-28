@@ -17,7 +17,7 @@
 ## よく使うコマンド
 
 - **テスト実行:** `bundle exec rspec`
-- **リンター実行:** `bundle exec rubocop`
+- **リンター実行:** `bundle exec rubocop`, `yarn eslint 'app/typescript/**/*.ts'`
 - **JavaScriptビルド:** `yarn build`
 - **CSSビルド:** `yarn build:css`
 
